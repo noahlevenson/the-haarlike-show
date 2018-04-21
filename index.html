@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>the haarlike show</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	<!-- Here's our background image: Don "Donny Baseball" Mattingly -->
+	<img src="don.jpg" id="donny">
+	
+	<div id="output">
+	<!-- We'll display our background image on the output canvas-->
+	<canvas id="output-canvas"></canvas> 
+
+	<!-- This canvas is where we'll draw the Haar-like features and the bounding box illustrating the subwindow -->
+	<canvas id="output-overlay-canvas"></canvas>
+	</div>
+
+	<!-- UI stuff-->
+	<div class="panel">
+	<p class="stack">the haarlike show</p>
+
+	<span class="stack-option">
+	<input type="number" class="number-input" value="74" max="479" min="0" id="subwindow-size" name="subwindow-size"/>
+	<label for="subwindow-size">subwindow size</label>
+	</span>
+
+	<span class="stack-option">
+	<input type="number" class="number-input" value="320" max="639" min="0" id="subwindow-x-offset" name="subwindow-x-offset"/>
+	<label for="subwindow-x-offset">subwindow x offset</label>
+	</span>
+
+	<span class="stack-option">
+	<input type="number" class="number-input" value="120" max="479" min="0" id="subwindow-y-offset" name="subwindow-y-offset"/>
+	<label for="subwindow-y-offset">subwindow y offset</label>
+	</span>
+
+	<span class="stack-option">
+	<input type="number" class="number-input" value="3" min="1" id="x-rectangles" name="x-rectangles"/>
+	<label for="x-rectangles">rectangles x</label>
+	</span>
+
+	<span class="stack-option">
+	<input type="number" class="number-input" value="1" min="1" id="y-rectangles" name="y-rectangles"/>
+	<label for="y-rectangles">rectangles y</label>
+	</span>
+
+	<span class="stack-option">
+	<input type="number" class="number-input" value="15" min="1" id="step" name="step"/>
+	<label for="step">step (ms)</label>
+	</span>
+
+	<button id="start" class="ui-button" onclick="start()">start the show</button>
+	</div>
+
+	<script src="the-haarlike-show.js"></script> 
+</body>
+</html>
