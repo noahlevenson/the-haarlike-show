@@ -10,6 +10,6 @@ You can use it to generate a Haar-like feature with any configuration of constit
 
 With an applied step duration of 1 ms, the visualization is an approximately -59,999,990% speed representation.
 
-It's permanently hosted here: https://haarlike.noahlevenson.com.
+It's permanently hosted here: http://haarlike.noahlevenson.com.
 
 Beyond the scope of computer vision mathematics, here is a good resource for information about [Don Mattingly](https://en.wikipedia.org/wiki/Don_Mattingly).
