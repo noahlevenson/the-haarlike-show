@@ -29,7 +29,6 @@ function Haarlike(rx, ry) {
 }
 
 function* generateHaarlike(haarlike, s, sx, sy) {
-	console.log(haarlike);
 	for (let i = 0; i < s; i += 1) {
 		for (let j = 0; j < s; j += 1) {
 			for (let h = 1; h * haarlike.ry + i <= s; h += 1) {
@@ -61,12 +60,12 @@ function drawHaarlike(feature, canvas) {
 		
 function start() {
 	if (loopId) clearInterval(loopId);
-	console.log(yRect.value); 
 	const h = new Haarlike(parseInt(xRect.value, 10), parseInt(yRect.value, 10)); 
 	const g = generateHaarlike(h, parseInt(sSize.value, 10), parseInt(sX.value, 10), parseInt(sY.value, 10));
 	const s = sSize.value;
 	const sx = sX.value;
 	const sy = sY.value;
+	let fcount = 0;
 	loopId = setInterval(() => {
 		if (!g.done) {
 			const f = g.next().value;
@@ -74,6 +73,10 @@ function start() {
 			outputOverlayCtx.strokeStyle = 'yellow';
 			outputOverlayCtx.strokeRect(sx, sy, s, s);
 			drawHaarlike(f, outputOverlayCtx);
+			outputOverlayCtx.font = "18px sans-serif";
+			outputOverlayCtx.fillStyle = "black";
+			outputOverlayCtx.fillText("feature count: " + fcount, 5, 20);
+			fcount += 1;
 		} else {
 			clearInterval(loopId);
 		}
